@@ -1,0 +1,45 @@
+CREATE TABLE endereco(
+  	id_endereco SERIAL PRIMARY KEY,
+  	cep varchar(8) NOT null,
+  	rua  varchar(100) not null,
+  	numero varchar(6) not null,
+  	bairro varchar(50) not null,
+  	cidade  varchar(50) not null,
+	estado varchar(2) not null
+);
+
+create table usuario(
+	id_usuario serial primary key,
+	nome varchar(50) not null,
+	cpf varchar(11) not null,
+	email varchar(50) not null,
+	senha varchar(50) not null,
+	nivel  varchar(15),
+	ativo boolean not null,
+	data_nascimento date,
+	fk_id_endereco int,
+	FOREIGN KEY(fk_id_endereco) REFERENCES endereco(id_endereco)
+);
+
+CREATE TABLE professor (
+	id_professor SERIAL PRIMARY KEY,
+	name varchar(50),
+	modalidade varchar(50),
+	cpf varchar(11) unique
+);
+CREATE TABLE aula (
+	id_aula SERIAL PRIMARY KEY,
+	name varchar(40) not null,
+	data date not null,
+	hora time not null,
+	fk_id_professor int not null,
+	foreign key(fk_id_professor) references professor(id_professor)
+);
+
+CREATE TABLE Have (
+	id_usuario int NOT NULL, 
+	id_aula int NOT NULL,
+	PRIMARY KEY(id_usuario,id_aula),
+	FOREIGN KEY(id_usuario) REFERENCES usuario(id_usuario),
+	FOREIGN KEY(id_aula) REFERENCES aula(id_aula)
+);

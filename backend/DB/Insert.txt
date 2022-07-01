@@ -1,0 +1,16 @@
+insert into usuario(nome, cpf, email, senha, nivel, ativo, data_nascimento)
+values('Victor', '13175886554', 'viictor@gmail.com','123456','user',true,'16-06-2022');
+
+insert into endereco(cep, rua, numero, bairro, cidade, estado)
+values('32072270', 'Refinaria Gabriel', '611','Petrolandia','Contagem','MG');
+
+update usuario set fk_id_endereco='1' where id_usuario='1'
+
+insert into professor(name, modalidade, cpf)
+values('Elias', 'Fundamentos', '12458745621');
+
+insert into aula(name, data, hora, fk_id_professor)
+values('Aula Inicial', '17-06-2022', '15:00','1');
+
+insert into have(id_usuario,id_aula)
+values('1','2');

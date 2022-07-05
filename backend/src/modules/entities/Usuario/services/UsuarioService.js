@@ -47,11 +47,10 @@ class UsuarioService {
     return usuario;
   }
 
-  async updateUsuario(id_usuario, nome, cpf, email, senha, data_nascimento) {
+  async updateUsuario(id_usuario, nome, email, senha, data_nascimento) {
     const usuario = await usuarioRepositorio.usuarioUpdate(
       id_usuario,
       nome,
-      cpf,
       email,
       senha,
       data_nascimento

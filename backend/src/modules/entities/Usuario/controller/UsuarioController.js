@@ -46,11 +46,10 @@ class UsuarioController {
 
   async update(req, res) {
     const { id_usuario } = req.params;
-    const { nome, cpf, email, senha, data_nascimento } = req.body;
+    const { nome, email, senha, data_nascimento } = req.body;
     const usuario = await usuarioService.updateUsuario(
       Number(id_usuario),
       nome,
-      cpf,
       email,
       senha,
       data_nascimento

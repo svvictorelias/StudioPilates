@@ -70,11 +70,11 @@ const usuarioCreate = async (
 const usuarioUpdate = async (
   id_usuario,
   nome,
-  cpf,
   email,
   senha,
   data_nascimento
 ) => {
+  const password = await hash(senha, 8);
   const user = await prisma.usuario.findFirst({
     where: { id_usuario }
   });
@@ -82,9 +82,8 @@ const usuarioUpdate = async (
     where: { id_usuario },
     data: {
       nome: nome ? nome : user.nome,
-      cpf: cpf ? cpf : user.cpf,
       email: email ? email : user.email,
-      senha: senha ? senha : user.senha,
+      senha: senha ? password : user.senha,
       data_nascimento: data_nascimento ? data_nascimento : user.data_nascimento
     }
   });

@@ -6,6 +6,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { parseCookies } from 'nookies';
+import { logout } from '../../Provider/Signup.provider';
 
 const EditProfile = () => {
   const [nome, setNome] = useState('');
@@ -49,6 +50,18 @@ const EditProfile = () => {
       alert('Ocorreu um erro ao Atualizar dados');
     }
   }
+
+  async function handleDeleteUser(e){
+    e.preventDefault()
+    try {
+      const deleteUser = await axios.put(`http://localhost:3001/usuario/${id_usuarioJWT}/delete`)
+      alert('Conta Deletada com Sucesso');
+      logout()
+      window.location.replace('/')
+    } catch (error) {
+      alert('Ocorreu um erro ao Deletar usuário');
+    }
+  }
   return (
     <>
       <Navbar />
@@ -88,7 +101,7 @@ const EditProfile = () => {
             />
           </div>
           <Buttons>
-            <button>Deletar Conta</button>
+            <button onClick={handleDeleteUser}>Deletar Conta</button>
             <button type="submit">Alterar</button>
           </Buttons>
           <span>

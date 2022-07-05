@@ -5,6 +5,10 @@ class AulaService {
     const aulas = await aulaRepositorio.aulasRead();
     return aulas;
   }
+  async ListAulasByNotId(id_usuario) {
+    const aulas = await aulaRepositorio.aulasByNotId(id_usuario);
+    return aulas;
+  }
 
   async createAula(nome, data, hora, fk_id_professor) {
     const aula = await aulaRepositorio.aulaCreate(

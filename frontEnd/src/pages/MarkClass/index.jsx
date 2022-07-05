@@ -17,9 +17,9 @@ const Signup = () => {
   const { 'reactAuth.id_usuario': tokenId } = parseCookies();
 
   useEffect(() => {
-    axios.get('http://localhost:3001/aula').then(({ data }) => {
+    axios.get(`http://localhost:3001/aula/${tokenId}`).then(({ data }) => {
       const filter = data.filter(obj => {
-        return new Date(obj.data) > new Date(dataFiltro) && obj.vagas > 0;
+        return new Date(obj.data) - new Date(dataFiltro)>3600000 && obj.vagas > 0;
       });
       setList(filter);
     });

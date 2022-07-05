@@ -1,5 +1,5 @@
 const prisma = require('../../../../database/prismaClient');
-const { aula, professor } = require('../../../../database/prismaClient');
+const { aula, professor,have } = require('../../../../database/prismaClient');
 
 const aulasRead = async () => {
   const result = await prisma.aula.findMany({
@@ -7,6 +7,31 @@ const aulasRead = async () => {
       professor: {}
     }
   });
+  return result;
+};
+
+const aulasByNotId = async (id_usuario) => {
+  const resultHave = await prisma.have.findMany({
+    where: { id_usuario },
+    include: {
+      aula: {},
+      usuario: {}
+    }
+  });
+  let aulasUserCadastrado = []
+  resultHave.map(r=>aulasUserCadastrado.push(r.id_aula))
+  console.log(aulasUserCadastrado)
+  
+  const result = await prisma.aula.findMany({
+    where:{NOT:{
+      id_aula:{in:aulasUserCadastrado}
+    }
+    },
+    include: {
+      professor: {}
+    }
+  });
+  console.log(result)
   return result;
 };
 
@@ -64,6 +89,7 @@ const aulaDelete = async id_aula => {
 
 module.exports = {
   aulasRead,
+  aulasByNotId,
   aulaCreate,
   aulaUpdate,
   addaulavaga,

@@ -7,6 +7,11 @@ class AulaController {
     const aulas = await aulaService.listAllAulas();
     return res.json(aulas);
   }
+  async ListAulasByNotId(req, res) {
+    const {id_usuario} = req.params
+    const aulas = await aulaService.ListAulasByNotId(Number(id_usuario));
+    return res.json(aulas);
+  }
 
   async create(req, res) {
     const { nome, data, hora, fk_id_professor } = req.body;

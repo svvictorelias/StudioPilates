@@ -5,9 +5,13 @@ const AulaController = require('@aula/controller/AulaController')
 const aulaController = new AulaController()
 
 /**
- * Lista todos os produtos
+ * Lista todos os aulas
  */
  route.get('/', aulaController.list);
+/**
+ * Lista todos as aulas que o usuario não está
+ */
+ route.get('/:id_usuario', aulaController.ListAulasByNotId);
 
 /**
  * Cria aula

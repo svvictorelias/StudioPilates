@@ -7,6 +7,12 @@ class UsuarioController {
     const usuarios = await usuarioService.listAllUsuarios();
     return res.json(usuarios);
   }
+  
+  async listById(req, res) {
+    const {id_usuario} = req.params
+    const usuarios = await usuarioService.listById(Number(id_usuario));
+    return res.json(usuarios);
+  }
 
   async create(req, res) {
     const {

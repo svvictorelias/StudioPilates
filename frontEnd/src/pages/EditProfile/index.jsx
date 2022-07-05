@@ -11,7 +11,7 @@ const EditProfile = () => {
   const[dataNascimento,setDataNascimento] = useState('')
   const[senha,setSenha] = useState('')
 
-  function handleUpdateUser(e){
+  async function handleUpdateUser(e){
     e.preventDefault()
     console.log(nome,email,dataNascimento,senha)
     try {

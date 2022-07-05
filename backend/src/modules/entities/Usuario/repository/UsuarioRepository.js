@@ -13,6 +13,12 @@ const findUniqueUser = async cpf => {
   });
   return result;
 };
+const findById = async id_usuario => {
+  const result = await prisma.usuario.findFirst({
+    where: { id_usuario }
+  });
+  return result;
+};
 
 const findUserPerEmail = async email => {
   const result = await prisma.usuario.findFirst({
@@ -98,6 +104,7 @@ const usuarioDelete = async id_usuario => {
 module.exports = {
   usuariosRead,
   findUniqueUser,
+  findById,
   findUserPerEmail,
   usuarioCreate,
   usuarioUpdate,

@@ -11,7 +11,7 @@ const usuarioController = new UsuarioController()
 /**
  * Lista um usuario
  */
-//  route.get('/', usuarioController.listById);
+ route.get('/:id_usuario', usuarioController.listById);
  
  /**
  * Cria um usuário
@@ -27,4 +27,5 @@ route.put('/:id_usuario', usuarioController.update);
  * Deleta usuario
  */
  route.put('/:id_usuario/delete', usuarioController.delete);
+ 
 module.exports = route

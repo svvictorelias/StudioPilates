@@ -5,6 +5,11 @@ class UsuarioService {
     const usuarios = await usuarioRepositorio.usuariosRead();
     return usuarios;
   }
+  
+  async listById(id_usuario) {
+    const usuarios = await usuarioRepositorio.findById(id_usuario);
+    return usuarios;
+  }
 
   async createUsuario(
     nome,

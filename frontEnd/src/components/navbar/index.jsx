@@ -40,7 +40,7 @@ const Navbar = () => {
     ) : (
       <ul>
         <li>
-          <a href="/dashboardAdmin">Aulas</a>
+          <a href="/dashboard">Aulas</a>
         </li>
         <li>
           <a href="/teachers">Professores</a>

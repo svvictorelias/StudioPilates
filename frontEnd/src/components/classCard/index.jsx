@@ -47,7 +47,7 @@ const ClassCard = ({ aulas, texto, toDo }) => {
       <Container>
         <Carousel ref={carousel}>
           {aulas?.map(item => {
-            const data = item.aula.data;
+            const data = item.data;
             const hora = data.substring(10);
             return (
               <Item key={item.id_aula}>
@@ -55,14 +55,14 @@ const ClassCard = ({ aulas, texto, toDo }) => {
                   <img src={LogoImage} alt="" />
                 </Image>
                 <Info>
-                  <span className="name">{item.aula.nome}</span>
+                  <span className="name">{item.nome}</span>
                   <span className={toDo ? 'statusText' : 'statusTextCheck'}>
                     {texto}
                   </span>
                   <span>{dataAtualFormatada(data) + hora}</span>
                   {toDo ? (
                     <button onClick={e => handleDeleteMarkClass(item.id_aula)}>
-                      Cancelar
+                      Deletar
                     </button>
                   ) : (
                     <button disabled>Finalizado</button>

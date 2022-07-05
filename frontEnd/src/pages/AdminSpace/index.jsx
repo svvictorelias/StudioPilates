@@ -17,11 +17,13 @@ const AdminSpace = () => {
   const [toDoClasses, setToDoClasses] = useState([])
   useEffect(() => {
 
-    axios.get(`http://localhost:3001/have/listAllById/${tokenId}`
+    axios.get(`http://localhost:3001/aula`
+    
     ).then(({ data }) => {
-      const doneData = data.filter(dado=>new Date(dado.aula.data)- new Date()<=0)
-      const toDoData = data.filter(dado=>new Date(dado.aula.data)- new Date()>0)
+      const doneData = data.filter(dado=>new Date(dado?.data)- new Date()<=0)
+      const toDoData = data.filter(dado=>new Date(dado?.data)- new Date()>0)
       setDoneClasses(doneData)
+      console.log(toDoData)
       setToDoClasses(toDoData)
     });
   }, []);

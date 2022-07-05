@@ -40,11 +40,11 @@ const Signup = () => {
         cidade: citySignup,
         estado: stateAddressSignup
       });
-      alert('Cadastro Realizado com Sucesso')
-      window.location.replace('/login')
-      return responseAxios
+      alert('Cadastro Realizado com Sucesso');
+      window.location.replace('/login');
+      return responseAxios;
     } catch (error) {
-      alert('Falha ao realizar Cadastro')
+      alert('Falha ao realizar Cadastro');
     }
   }
   const handleFinish = e => {

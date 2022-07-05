@@ -20,9 +20,6 @@ const Home = () => {
             Basta entrar na sua conta e aproveitar
           </p>
           <ModalidadesCard />
-          <a href="/login">
-            <button>Entrar</button>
-          </a>
         </LeftMainPage>
         <RightCarrosel>
           <ImageSlider slides={SliderData} />

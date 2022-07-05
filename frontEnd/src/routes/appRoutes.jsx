@@ -10,6 +10,7 @@ import RegisterTeacher from '../pages/RegisterTeacher'
 import StudentSpace from '../pages/StudentSpace'
 import { parseCookies } from 'nookies'
 import AdminSpace from '../pages/AdminSpace'
+import EditProfile from '../pages/EditProfile'
 
 const AppRoutes = () => {
   const { 'reactAuth.nivel': nivelUsuarioJWT } =
@@ -22,6 +23,7 @@ const AppRoutes = () => {
       <Route path='/' exact element={<Home/>}/>
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/perfil" element={<EditProfile />} />
       <Route path="/markClass" element={<MarkClass />} />
       <Route path="/*" element={<Page404 />} />
       <Route path="/dashboard" element={<Space/>} />

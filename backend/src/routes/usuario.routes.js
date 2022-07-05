@@ -5,9 +5,13 @@ const UsuarioController = require('@usuario/controller/UsuarioController')
 const usuarioController = new UsuarioController()
 
 /**
- * Lista todos os produtos
+ * Lista todos os usuarios
  */
  route.get('/', usuarioController.list);
+/**
+ * Lista um usuario
+ */
+//  route.get('/', usuarioController.listById);
  
  /**
  * Cria um usuário

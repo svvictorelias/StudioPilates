@@ -1,6 +1,5 @@
 import React from 'react';
-import { Form, StyleContainer } from './styles';
-import NavBar from '../../components/navbar';
+import { Form } from './styles';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -27,9 +26,7 @@ const RegisterTeacher = () => {
       });
   };
   return (
-    <>
-      <NavBar />
-      <StyleContainer>
+  
         <Form onSubmit={handleRegisterTeacher}>
           <h1>Cadastrar Professor</h1>
           <h3>Nome</h3>
@@ -49,8 +46,7 @@ const RegisterTeacher = () => {
             Deseja Voltar? <a href="/">Menu</a>
           </span>
         </Form>
-      </StyleContainer>
-    </>
+
   );
 };
 

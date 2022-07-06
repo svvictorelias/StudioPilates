@@ -5,33 +5,28 @@ export const StyleContainer = styled.div`
   height: 88vh;
   background-color: var(--text-purple);
   width: 100%;
-  display: grid;
+  display: flex;
   align-items: center;
   justify-content: center;
 `
-export const Form = styled.form`
+
+export const LabelActions = styled.div`
+  background-color: var(--color-primary);
+  border-radius: 10px 0px 0px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  gap: 10px;
-  background-color: var(--color-primary);
-  padding: 30px 30px;
-  border-radius: 10px;
-  color: var(--text-purple);
-  a {
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid var(--text-purple);
+  h1{
     color: var(--text-purple);
-    text-decoration: underline;
+    padding-bottom: 10px;
   }
-  button {
-    width: 30%;
-  }
-  .Professor,
-  .Modalidades,
-  .Dados {
-    gap: 30px;
+  .buttons{
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-around;
   }
-
-  `
+`

@@ -6,7 +6,7 @@ import Signup from '../pages/Signup'
 import Home from '../pages/home'
 import Login from '../pages/Login'
 import MarkClass from '../pages/MarkClass'
-import RegisterTeacher from '../pages/RegisterTeacher'
+import Teacher from '../pages/Teacher'
 import StudentSpace from '../pages/StudentSpace'
 import { parseCookies } from 'nookies'
 import AdminSpace from '../pages/AdminSpace'
@@ -27,7 +27,7 @@ const AppRoutes = () => {
       <Route path="/markClass" element={<MarkClass />} />
       <Route path="/*" element={<Page404 />} />
       <Route path="/dashboard" element={<Space/>} />
-      <Route path="/RegisterTeacher" element={<RegisterTeacher />} />
+      <Route path="/teacher" element={<Teacher />} />
     </Routes>
   )
 }

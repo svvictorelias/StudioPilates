@@ -43,7 +43,7 @@ const Navbar = () => {
           <a href="/dashboard">Aulas</a>
         </li>
         <li>
-          <a href="/teachers">Professores</a>
+          <a href="/teacher">Professores</a>
         </li>
         <li>
           <a href="/users">Usuários</a>

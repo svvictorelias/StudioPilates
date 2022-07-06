@@ -23,6 +23,7 @@ const StudentSpace = () => {
       const toDoData = data.filter(dado=>new Date(dado.aula.data)- new Date()>0)
       setDoneClasses(doneData)
       setToDoClasses(toDoData)
+      console.log(data)
     });
   }, []);
 

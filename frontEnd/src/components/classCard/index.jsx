@@ -15,7 +15,7 @@ const ClassCard = ({ aulas, texto, toDo }) => {
       anoF = dataFormat.getFullYear();
     return diaF + '/' + mesF + '/' + anoF;
   }
-  const { 'reactAuth.id_usuario': id_usuario } = parseCookies();
+  const { 'reactAuth.id_usuario': id_usuario,'reactAuth.nivel': tokenNivel } = parseCookies();
   const carousel = useRef(null);
   const handleRightClick = e => {
     carousel.current.scrollLeft += carousel.current.offsetWidth;
@@ -47,7 +47,7 @@ const ClassCard = ({ aulas, texto, toDo }) => {
       <Container>
         <Carousel ref={carousel}>
           {aulas?.map(item => {
-            const data = item.data;
+            const data =tokenNivel=='USER'? item.aula.data:item.data;
             const hora = data.substring(10);
             return (
               <Item key={item.id_aula}>
@@ -55,14 +55,14 @@ const ClassCard = ({ aulas, texto, toDo }) => {
                   <img src={LogoImage} alt="" />
                 </Image>
                 <Info>
-                  <span className="name">{item.nome}</span>
+                  <span className="name">{tokenNivel=='USER'?item.aula.nome:item.nome}</span>
                   <span className={toDo ? 'statusText' : 'statusTextCheck'}>
                     {texto}
                   </span>
                   <span>{dataAtualFormatada(data) + hora}</span>
                   {toDo ? (
-                    <button onClick={e => handleDeleteMarkClass(item.id_aula)}>
-                      Deletar
+                    <button onClick={e => handleDeleteMarkClass(tokenNivel=='USER'?item.aula.id_aula:item.id_aula)}>
+                      Cancelar
                     </button>
                   ) : (
                     <button disabled>Finalizado</button>

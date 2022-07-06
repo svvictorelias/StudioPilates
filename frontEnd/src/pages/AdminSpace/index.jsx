@@ -23,8 +23,8 @@ const AdminSpace = () => {
       const doneData = data.filter(dado=>new Date(dado?.data)- new Date()<=0)
       const toDoData = data.filter(dado=>new Date(dado?.data)- new Date()>0)
       setDoneClasses(doneData)
-      console.log(toDoData)
       setToDoClasses(toDoData)
+      
     });
   }, []);
 

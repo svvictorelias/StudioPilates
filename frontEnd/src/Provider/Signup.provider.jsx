@@ -12,6 +12,7 @@ export const AuthContext = createContext({});
 export function AuthProvider({ children }) {
   const [user, setUser] = useState();
   const [idClass, setIdClass] = useState();
+  const [idTeacher, setIdTeacher] = useState();
   const isAuthenticated = !!user;
 
   useEffect(() => {
@@ -57,7 +58,7 @@ export function AuthProvider({ children }) {
   }
   return (
     <AuthContext.Provider
-      value={{ signIn, isAuthenticated, user, idClass, setIdClass }}
+      value={{ signIn, isAuthenticated, user, idClass, setIdClass, idTeacher, setIdTeacher }}
     >
       {children}
     </AuthContext.Provider>

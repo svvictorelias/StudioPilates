@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Form = styled.form`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,4 +25,14 @@ export const Form = styled.form`
     align-items: center;
   }
 
+  `
+  export const AvailableTeachers = styled.div`
+  max-width: 100%;
+  height: 300px;
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  overflow-x: auto;
+  
   `

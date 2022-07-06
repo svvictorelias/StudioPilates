@@ -18,10 +18,10 @@ const CardTeacher = ({ id_professor, nome, modalidade, cpf }) => {
       <DadosAula>
         <h3>{nome}</h3>
         <p>
-          <strong>Modalidade:</strong> {modalidade}
+          {modalidade}
         </p>
         <p>
-          <strong>CPF:</strong> {cpf}
+         {cpf}
         </p>
       </DadosAula>
     </Container>
